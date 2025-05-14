@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0E192D; /* Set background to black */
+  --foreground: #ffffff; /* Set text color to white */
 }
 
 @theme inline {
@@ -16,8 +16,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0E192D; /* Set dark mode background to black */
+    --foreground: #ffffff; /* Set dark mode text color to white */
   }
 }
 
@@ -27,14 +27,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 @layer base {
     body {
         @apply font-[Raleway];
     }
     li {
         @apply px-4;
-        @apply cursor-pointer
+        @apply cursor-pointer;
     }
 }
 
@@ -51,4 +50,8 @@ body {
         rgba(112, 157, 255, 0.8),
         hsla(242, 74%, 61%, 0.8)   
     )!important;
+}
+
+.navbar-spacing {
+  padding-top: 80px; /* Adjust based on your navbar height */
 }

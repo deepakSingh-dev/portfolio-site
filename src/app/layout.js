@@ -11,10 +11,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Deepak's Potfolio",
-  description: "Deepak Singh Portfolio Website",
-};
+
 
 export default function RootLayout({ children }) {
   return (
@@ -27,3 +24,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+
