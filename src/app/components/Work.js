@@ -30,7 +30,7 @@ const Work = () => {
   }, []);
 
   return (
-    <div name="work" className="py-56 px-56 md:h-screen text-gray-300 bg-[#0a192f]">
+    <div name="work" className="py-56 px-56 text-gray-300 bg-[#0a192f]">
       <div className="flex flex-col justify-center">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-pink-600">
@@ -72,17 +72,6 @@ const Work = () => {
                     Code
                   </button>
                 </a>
-                {/* Live Link (if available) */}
-                {repo.homepage && (
-                  <a href={repo.homepage} target="_blank" rel="noopener noreferrer">
-                    <button
-                      className="text-center rounded-lg px-4 py-3 m-2
-                     bg-white text-gray-700 font-bold text-lg"
-                    >
-                      Live
-                    </button>
-                  </a>
-                )}
               </div>
             </div>
           ))}
