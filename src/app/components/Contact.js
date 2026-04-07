@@ -6,7 +6,6 @@ const serif = { fontFamily: "Georgia, serif" };
 
 const INFO = [
   { label: "Email", value: "singhdeepak2406@gmail.com", href: "mailto:singhdeepak2406@gmail.com" },
-  { label: "Phone", value: "(551) 376-8908", href: "tel:+15513768908" },
   { label: "Location", value: "Hoboken, NJ · USA", href: null },
   { label: "Web", value: "deepaksingh.me", href: "https://deepaksingh.me" },
 ];
