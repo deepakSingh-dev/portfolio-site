@@ -1,98 +1,112 @@
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaPython, FaJava, FaPhp } from 'react-icons/fa';
-import { SiMongodb, SiMysql, SiPostgresql, SiOracle, SiRedis, SiApachekafka, SiTailwindcss, SiDjango, SiFlask, SiSpring, SiLaravel, SiFigma, SiAngular, SiVueDotJs, SiNextdotjs, SiSvelte, SiJquery, SiRabbitmq, SiPostman, SiSelenium, SiJira, SiDocker } from 'react-icons/si';
-import { MdOutlineApi } from 'react-icons/md';
+const mono = { fontFamily: "'Courier New', Courier, monospace" };
+const serif = { fontFamily: "Georgia, serif" };
 
-const Skills = () => {
-  const skillSections = [
-    {
-      category: 'Programming',
-      skills: [
-        { name: 'Python', icon: <FaPython className="w-20 h-20 mx-auto text-blue-500" /> },
-        { name: 'Java', icon: <FaJava className="w-20 h-20 mx-auto text-red-500" /> },
-        { name: 'C++', icon: <FaJsSquare className="w-20 h-20 mx-auto text-blue-400" /> },
-        { name: 'PHP', icon: <FaPhp className="w-20 h-20 mx-auto text-purple-500" /> },
-      ],
+const GROUPS = [
+  {
+    label: "Languages",
+    skills: ["Python", "JavaScript", "TypeScript", "Java", "C++", "C#", "SQL", "PHP"],
+    chipClass: "chip-amber",
+    chipStyle: {
+      color: "#c8b88a",
+      background: "rgba(200,184,138,0.08)",
+      border: "0.5px solid rgba(200,184,138,0.22)",
     },
-    {
-      category: 'Web & Front-End',
-      skills: [
-        { name: 'JavaScript', icon: <FaJsSquare className="w-20 h-20 mx-auto text-yellow-500" /> },
-        { name: 'TypeScript', icon: <FaJsSquare className="w-20 h-20 mx-auto text-blue-500" /> },
-        { name: 'Node.js', icon: <FaNodeJs className="w-20 h-20 mx-auto text-green-500" /> },
-        { name: 'React.js', icon: <FaReact className="w-20 h-20 mx-auto text-blue-300" /> },
-        { name: 'Next.js', icon: <SiNextdotjs className="w-20 h-20 mx-auto text-gray-300" /> },
-        { name: 'RESTful APIs', icon: <MdOutlineApi className="w-20 h-20 mx-auto text-green-400" /> },
-        { name: 'jQuery', icon: <SiJquery className="w-20 h-20 mx-auto text-blue-400" /> },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-20 h-20 mx-auto text-blue-400" /> },
-        { name: 'HTML5', icon: <FaHtml5 className="w-20 h-20 mx-auto text-orange-500" /> },
-        { name: 'CSS3', icon: <FaCss3Alt className="w-20 h-20 mx-auto text-blue-500" /> },
-      ],
+  },
+  {
+    label: "Frontend & Backend",
+    skills: ["React.js", "Next.js", "Node.js", "Express.js", "FastAPI", "Redux", "GraphQL", "REST APIs", "Laravel"],
+    chipClass: "chip-neutral",
+    chipStyle: {
+      color: "rgba(255,255,255,0.65)",
+      background: "rgba(255,255,255,0.04)",
+      border: "0.5px solid rgba(255,255,255,0.10)",
     },
-    {
-      category: 'Database',
-      skills: [
-        { name: 'MySQL', icon: <SiMysql className="w-20 h-20 mx-auto text-blue-500" /> },
-        { name: 'Oracle SQL', icon: <SiOracle className="w-20 h-20 mx-auto text-red-500" /> },
-        { name: 'PostgreSQL', icon: <SiPostgresql className="w-20 h-20 mx-auto text-blue-400" /> },
-        { name: 'MongoDB', icon: <SiMongodb className="w-20 h-20 mx-auto text-green-600" /> },
-        { name: 'Redis', icon: <SiRedis className="w-20 h-20 mx-auto text-red-500" /> },
-        { name: 'Apache Spark', icon: <SiApachekafka className="w-20 h-20 mx-auto text-orange-500" /> },
-      ],
+  },
+  {
+    label: "AI & Machine Learning",
+    skills: ["LangChain", "LLMs", "Agentic Workflows", "Hugging Face", "Prompt Engineering", "NLP", "TensorFlow", "PyTorch", "Scikit-learn", "LSTM", "XGBoost"],
+    chipClass: "chip-teal",
+    chipStyle: {
+      color: "#5ec4a0",
+      background: "rgba(94,196,160,0.07)",
+      border: "0.5px solid rgba(94,196,160,0.20)",
     },
-    {
-      category: 'Software and Tools',
-      skills: [
-        { name: 'RabbitMQ', icon: <SiRabbitmq className="w-20 h-20 mx-auto text-orange-500" /> },
-        { name: 'Postman API', icon: <SiPostman className="w-20 h-20 mx-auto text-orange-400" /> },
-        { name: 'Selenium', icon: <SiSelenium className="w-20 h-20 mx-auto text-green-400" /> },
-        { name: 'Docker', icon: <SiDocker className="w-20 h-20 mx-auto text-blue-500" /> },
-        { name: 'Jira', icon: <SiJira className="w-20 h-20 mx-auto text-blue-400" /> },
-      ],
+  },
+  {
+    label: "Data & Cloud Infrastructure",
+    skills: ["PostgreSQL", "MongoDB", "Redis", "Kafka", "Airflow", "Apache Spark", "AWS (EC2/S3/Lambda)", "GCP", "Docker", "Kubernetes", "Jenkins", "Terraform", "CI/CD", "Git"],
+    chipClass: "chip-blue",
+    chipStyle: {
+      color: "#85b7eb",
+      background: "rgba(133,183,235,0.07)",
+      border: "0.5px solid rgba(133,183,235,0.20)",
     },
-    {
-      category: 'Frameworks',
-      skills: [
-        { name: 'Angular', icon: <SiAngular className="w-20 h-20 mx-auto text-red-500" /> },
-        { name: 'Next.js', icon: <SiNextdotjs className="w-20 h-20 mx-auto text-gray-300" /> },
-        { name: 'Django', icon: <SiDjango className="w-20 h-20 mx-auto text-green-500" /> },
-        { name: 'Flask', icon: <SiFlask className="w-20 h-20 mx-auto text-gray-400" /> },
-        { name: 'React Native', icon: <FaReact className="w-20 h-20 mx-auto text-blue-300" /> },
-        { name: 'Svelte', icon: <SiSvelte className="w-20 h-20 mx-auto text-orange-500" /> },
-        { name: 'Express', icon: <FaNodeJs className="w-20 h-20 mx-auto text-green-500" /> },
-        { name: 'Spring', icon: <SiSpring className="w-20 h-20 mx-auto text-green-400" /> },
-        { name: 'Laravel', icon: <SiLaravel className="w-20 h-20 mx-auto text-red-500" /> },
-        { name: 'Figma', icon: <SiFigma className="w-20 h-20 mx-auto text-purple-500" /> },
-      ],
+  },
+  {
+    label: "Methodology",
+    skills: ["Agile / Scrum", "MCP", "Microservices", "System Design"],
+    chipClass: "chip-neutral",
+    chipStyle: {
+      color: "rgba(255,255,255,0.65)",
+      background: "rgba(255,255,255,0.04)",
+      border: "0.5px solid rgba(255,255,255,0.10)",
     },
-  ];
+  },
+];
 
+export default function Skills() {
   return (
-    <div name='skills' className='px-56 h-auto bg-[#0a192f] text-gray-300'>
-      <div className='py-20 px-10 flex flex-col justify-center'>
-        <div>
-          <p className='text-4xl font-bold inline border-b-4 border-pink-600'>Skills</p>
-          <p className='py-4'>These are the technologies I've worked with</p>
-        </div>
+    <section
+      id="skills"
+      style={{ padding: "90px clamp(24px, 6vw, 100px)", position: "relative", zIndex: 1 }}
+    >
+      <h2
+        style={{
+          ...serif,
+          fontSize: "32px",
+          color: "rgba(255,255,255,0.85)",
+          marginBottom: "48px",
+        }}
+      >
+        Skills
+      </h2>
 
-        {skillSections.map((section, index) => (
-          <div key={index} className='my-8'>
-            <h3 className='text-2xl font-bold mb-4'>{section.category}</h3>
-            <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center'>
-              {section.skills.map((skill, idx) => (
-                <div
-                  key={idx}
-                  className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'
+      <div style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
+        {GROUPS.map((group) => (
+          <div key={group.label}>
+            <p
+              style={{
+                ...mono,
+                fontSize: "10px",
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "rgba(255,255,255,0.28)",
+                marginBottom: "14px",
+              }}
+            >
+              {group.label}
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+              {group.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className={group.chipClass}
+                  style={{
+                    ...mono,
+                    fontSize: "12px",
+                    padding: "5px 13px",
+                    borderRadius: "2px",
+                    cursor: "default",
+                    ...group.chipStyle,
+                  }}
                 >
-                  {skill.icon}
-                  <p className='my-4'>{skill.name.toUpperCase()}</p>
-                </div>
+                  {skill}
+                </span>
               ))}
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Skills;
+}

@@ -1,90 +1,31 @@
-"use client";
+import Timeline from "./Timeline";
 
-import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
+const ITEMS = [
+  {
+    date: "Oct 2023 – Jul 2024",
+    role: "Software Development Engineer",
+    org: "Robotspace Robotics & Automation · Hyderabad, India",
+    detail:
+      "Architected a full-stack ERP system with no-code component dashboard for production monitoring, boosting operational efficiency by 5×. Built a real-time Redis monitoring platform for predictive scheduling and anomaly detection, cutting production downtime by 30%. Engineered navigation system and UI for an autonomous material-transport robot using Redis pub/sub and shell scripting. Deployed containerized microservices via Docker with Jenkins CI/CD pipelines, improving release efficiency by 15%.",
+    badges: ["Redis", "Docker", "Jenkins", "Python", "CI/CD", "Shell", "Selenium"],
+  },
+  {
+    date: "Jan 2023 – Sep 2023",
+    role: "Associate Software Developer",
+    org: "GKB Labs LLP · Hyderabad, India",
+    detail:
+      "Developed a CRM system using Laravel, PHP, and PostgreSQL automating 8 sales workflows — increasing team performance by 25% and data retrieval speed by 40%. Led CMS database schema design and Agile/Scrum feature delivery across 3 cross-functional sprints, improving user engagement by 30% and cutting operational costs by 20%.",
+    badges: ["Laravel", "PHP", "PostgreSQL", "Agile", "Scrum"],
+  },
+];
 
-import "react-vertical-timeline-component/style.min.css";
-import { experiences } from "../data/constants.js"; 
-import { SectionWrapper } from "../hoc.js"; 
-import { textVariant } from "../utils/motion.js"; 
-
-const styles = {
-  sectionSubText: "text-gray-400 text-[14px]",
-  sectionHeadText: "text-white text-[32px] font-bold",
-};
-
-const ExperienceCard = ({ experience }) => {
+export default function Experience() {
   return (
-    
-    <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          />
-        </div>
-      }
-    >
-      <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
-      </div>
-
-      <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
-          >
-            {point}
-          </li>
-        ))}
-      </ul>
-    </VerticalTimelineElement>
+    <Timeline
+      sectionId="experience"
+      title="Experience"
+      items={ITEMS}
+      accentColor="#5ec4a0"
+    />
   );
-};
-
-const Experience = () => {
-  return (
-    <div name='experience' className="py-10" >
-    
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
-        </h2>
-      </motion.div>
-
-      <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={`experience-${index}`} experience={experience} />
-          ))}
-        </VerticalTimeline>
-      </div>
-    </div>
-  );
-};
-
-export default SectionWrapper(Experience, "experience");
-
+}

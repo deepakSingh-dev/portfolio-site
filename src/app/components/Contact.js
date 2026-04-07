@@ -1,66 +1,189 @@
 "use client";
+import { useState } from "react";
 
-import React, { useState } from 'react';
+const mono = { fontFamily: "'Courier New', Courier, monospace" };
+const serif = { fontFamily: "Georgia, serif" };
 
-const Contact = () => {
-  const [status, setStatus] = useState('');
+const INFO = [
+  { label: "Email", value: "singhdeepak2406@gmail.com", href: "mailto:singhdeepak2406@gmail.com" },
+  { label: "Phone", value: "(551) 376-8908", href: "tel:+15513768908" },
+  { label: "Location", value: "Hoboken, NJ · USA", href: null },
+  { label: "Web", value: "deepaksingh.me", href: "https://deepaksingh.me" },
+];
+
+const inputStyle = {
+  ...mono,
+  fontSize: "13px",
+  width: "100%",
+  padding: "10px 14px",
+  background: "rgba(255,255,255,0.04)",
+  border: "0.5px solid rgba(255,255,255,0.10)",
+  borderRadius: "4px",
+  color: "rgba(255,255,255,0.8)",
+  outline: "none",
+};
+
+export default function Contact() {
+  const [status, setStatus] = useState("");
+  const [focusedField, setFocusedField] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
     try {
-      const response = await fetch('https://getform.io/f/axowdrnb', {
-        method: 'POST',
+      const response = await fetch("https://getform.io/f/axowdrnb", {
+        method: "POST",
         body: formData,
       });
-
       if (response.ok) {
-        setStatus('Form submitted successfully!');
-        e.target.reset(); // Clear the form
+        setStatus("Message sent successfully.");
+        e.target.reset();
       } else {
-        setStatus('Form submission failed. Please try again.');
+        setStatus("Failed to send. Please try again.");
       }
-    } catch (error) {
-      setStatus('An error occurred. Please try again.');
+    } catch {
+      setStatus("An error occurred. Please try again.");
     }
   };
 
-  return (
-    <div name='contact' className='py-46 px-56 bg-[#0a192f] flex justify-center items-center p-4'>
-      <form onSubmit={handleSubmit} className='flex flex-col max-w-[600px] w-full'>
-        <div className='pb-8'>
-          <p className='text-4xl font-bold inline border-b-4 border-pink-600 text-gray-300'>Contact</p>
-          <p className='text-gray-300 py-4'>Submit the form below or shoot me an email - singh.deepak3559@gmail.com</p>
-        </div>
-        <input
-          className='bg-[#1e293b] p-2 text-white' // Changed background to a darker color and kept text white
-          type="text"
-          placeholder='Name'
-          name='name'
-          required
-        />
-        <input
-          className='my-4 p-2 bg-[#1e293b] text-white' // Changed background to a darker color and kept text white
-          type="email"
-          placeholder='Email'
-          name='email'
-          required
-        />
-        <textarea
-          className='bg-[#1e293b] p-2 text-white' // Changed background to a darker color and kept text white
-          name="message"
-          rows="10"
-          placeholder='Message'
-          required
-        ></textarea>
-        <button className='text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center'>
-          Let's Collaborate
-        </button>
-        {status && <p className='text-gray-300 mt-4'>{status}</p>}
-      </form>
-    </div>
-  );
-};
+  const focusBorder = "0.5px solid rgba(94,196,160,0.4)";
+  const normalBorder = "0.5px solid rgba(255,255,255,0.10)";
 
-export default Contact;
+  return (
+    <section
+      id="contact"
+      style={{ padding: "90px clamp(24px, 6vw, 100px)", position: "relative", zIndex: 1 }}
+    >
+      <h2
+        style={{
+          ...serif,
+          fontSize: "32px",
+          color: "rgba(255,255,255,0.85)",
+          marginBottom: "48px",
+        }}
+      >
+        Contact
+      </h2>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "48px",
+          alignItems: "start",
+        }}
+      >
+        {/* Left: contact info */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+          {INFO.map(({ label, value, href }) => (
+            <div key={label}>
+              <p
+                style={{
+                  ...mono,
+                  fontSize: "10px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.14em",
+                  color: "rgba(255,255,255,0.28)",
+                  marginBottom: "5px",
+                }}
+              >
+                {label}
+              </p>
+              {href ? (
+                <a
+                  href={href}
+                  style={{
+                    ...mono,
+                    fontSize: "13px",
+                    color: "#5ec4a0",
+                    textDecoration: "none",
+                  }}
+                >
+                  {value}
+                </a>
+              ) : (
+                <span style={{ ...mono, fontSize: "13px", color: "#5ec4a0" }}>
+                  {value}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Right: form */}
+        <div
+          style={{
+            background: "rgba(22,22,26,0.6)",
+            border: "0.5px solid rgba(255,255,255,0.08)",
+            borderRadius: "10px",
+            padding: "26px",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              onFocus={() => setFocusedField("name")}
+              onBlur={() => setFocusedField(null)}
+              style={{
+                ...inputStyle,
+                border: focusedField === "name" ? focusBorder : normalBorder,
+              }}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              onFocus={() => setFocusedField("email")}
+              onBlur={() => setFocusedField(null)}
+              style={{
+                ...inputStyle,
+                border: focusedField === "email" ? focusBorder : normalBorder,
+              }}
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows={6}
+              required
+              onFocus={() => setFocusedField("message")}
+              onBlur={() => setFocusedField(null)}
+              style={{
+                ...inputStyle,
+                resize: "vertical",
+                border: focusedField === "message" ? focusBorder : normalBorder,
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                ...mono,
+                fontSize: "13px",
+                fontWeight: "bold",
+                padding: "12px",
+                borderRadius: "3px",
+                background: "#5ec4a0",
+                color: "#0e0e10",
+                border: "none",
+                cursor: "pointer",
+                width: "100%",
+                transition: "opacity 0.2s",
+              }}
+            >
+              Send Message
+            </button>
+            {status && (
+              <p style={{ ...mono, fontSize: "12px", color: "rgba(255,255,255,0.45)", textAlign: "center" }}>
+                {status}
+              </p>
+            )}
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
