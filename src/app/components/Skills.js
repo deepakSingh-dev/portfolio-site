@@ -7,9 +7,9 @@ const GROUPS = [
     skills: ["Python", "JavaScript", "TypeScript", "Java", "C++", "C#", "SQL", "PHP"],
     chipClass: "chip-amber",
     chipStyle: {
-      color: "#c8b88a",
-      background: "rgba(200,184,138,0.08)",
-      border: "0.5px solid rgba(200,184,138,0.22)",
+      color: "#3b1f0a",
+      background: "rgba(59,31,10,0.08)",
+      border: "0.5px solid rgba(59,31,10,0.22)",
     },
   },
   {
@@ -17,9 +17,9 @@ const GROUPS = [
     skills: ["React.js", "Next.js", "Node.js", "Express.js", "FastAPI", "Redux", "GraphQL", "REST APIs", "Laravel"],
     chipClass: "chip-neutral",
     chipStyle: {
-      color: "rgba(255,255,255,0.65)",
-      background: "rgba(255,255,255,0.04)",
-      border: "0.5px solid rgba(255,255,255,0.10)",
+      color: "rgba(30,20,8,0.65)",
+      background: "rgba(30,20,8,0.04)",
+      border: "0.5px solid rgba(30,20,8,0.25)",
     },
   },
   {
@@ -27,9 +27,9 @@ const GROUPS = [
     skills: ["LangChain", "LLMs", "Agentic Workflows", "Hugging Face", "Prompt Engineering", "NLP", "TensorFlow", "PyTorch", "Scikit-learn", "LSTM", "XGBoost"],
     chipClass: "chip-teal",
     chipStyle: {
-      color: "#5ec4a0",
-      background: "rgba(94,196,160,0.07)",
-      border: "0.5px solid rgba(94,196,160,0.20)",
+      color: "#2d6a4f",
+      background: "rgba(45,106,79,0.07)",
+      border: "0.5px solid rgba(45,106,79,0.20)",
     },
   },
   {
@@ -37,9 +37,9 @@ const GROUPS = [
     skills: ["PostgreSQL", "MongoDB", "Redis", "Kafka", "Airflow", "Apache Spark", "AWS (EC2/S3/Lambda)", "GCP", "Docker", "Kubernetes", "Jenkins", "Terraform", "CI/CD", "Git"],
     chipClass: "chip-blue",
     chipStyle: {
-      color: "#85b7eb",
-      background: "rgba(133,183,235,0.07)",
-      border: "0.5px solid rgba(133,183,235,0.20)",
+      color: "#2d6a4f",
+      background: "rgba(45,106,79,0.07)",
+      border: "0.5px solid rgba(45,106,79,0.20)",
     },
   },
   {
@@ -47,9 +47,9 @@ const GROUPS = [
     skills: ["Agile / Scrum", "MCP", "Microservices", "System Design"],
     chipClass: "chip-neutral",
     chipStyle: {
-      color: "rgba(255,255,255,0.65)",
-      background: "rgba(255,255,255,0.04)",
-      border: "0.5px solid rgba(255,255,255,0.10)",
+      color: "rgba(30,20,8,0.65)",
+      background: "rgba(30,20,8,0.04)",
+      border: "0.5px solid rgba(30,20,8,0.25)",
     },
   },
 ];
@@ -63,8 +63,8 @@ export default function Skills() {
       <h2
         style={{
           ...serif,
-          fontSize: "32px",
-          color: "rgba(255,255,255,0.85)",
+          fontSize: "39px",
+          color: "rgba(30,20,8,0.85)",
           marginBottom: "48px",
         }}
       >
@@ -77,10 +77,10 @@ export default function Skills() {
             <p
               style={{
                 ...mono,
-                fontSize: "10px",
+                fontSize: "13px",
                 textTransform: "uppercase",
                 letterSpacing: "0.14em",
-                color: "rgba(255,255,255,0.28)",
+                color: "rgba(30,20,8,0.28)",
                 marginBottom: "14px",
               }}
             >
@@ -93,7 +93,7 @@ export default function Skills() {
                   className={group.chipClass}
                   style={{
                     ...mono,
-                    fontSize: "12px",
+                    fontSize: "13px",
                     padding: "5px 13px",
                     borderRadius: "2px",
                     cursor: "default",

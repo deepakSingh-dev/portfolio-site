@@ -25,7 +25,7 @@ export default function Education() {
       sectionId="education"
       title="Education"
       items={ITEMS}
-      accentColor="#c8b88a"
+      accentColor="#3b1f0a"
     />
   );
 }

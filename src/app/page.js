@@ -1,4 +1,5 @@
 import ParticleCanvas from "./components/ParticleCanvas";
+import MouseRipple from "./components/MouseRipple";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Connect from "./components/Connect";
@@ -12,8 +13,9 @@ import Footer from "./components/Footer";
 
 export default function HomePage() {
   return (
-    <div style={{ position: "relative", background: "#0e0e10", minHeight: "100vh" }}>
+    <div style={{ position: "relative", background: "#f5f0e8", minHeight: "100vh" }}>
       <ParticleCanvas />
+      <MouseRipple />
       <Navbar />
       <main style={{ position: "relative", zIndex: 1, paddingTop: "64px" }}>
         <Hero />

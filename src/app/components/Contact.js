@@ -12,13 +12,13 @@ const INFO = [
 
 const inputStyle = {
   ...mono,
-  fontSize: "13px",
+  fontSize: "14px",
   width: "100%",
   padding: "10px 14px",
-  background: "rgba(255,255,255,0.04)",
-  border: "0.5px solid rgba(255,255,255,0.10)",
+  background: "rgba(30,20,8,0.04)",
+  border: "0.5px solid rgba(30,20,8,0.25)",
   borderRadius: "4px",
-  color: "rgba(255,255,255,0.8)",
+  color: "rgba(30,20,8,0.8)",
   outline: "none",
 };
 
@@ -45,8 +45,8 @@ export default function Contact() {
     }
   };
 
-  const focusBorder = "0.5px solid rgba(94,196,160,0.4)";
-  const normalBorder = "0.5px solid rgba(255,255,255,0.10)";
+  const focusBorder = "0.5px solid rgba(45,106,79,0.4)";
+  const normalBorder = "0.5px solid rgba(30,20,8,0.25)";
 
   return (
     <section
@@ -56,8 +56,8 @@ export default function Contact() {
       <h2
         style={{
           ...serif,
-          fontSize: "32px",
-          color: "rgba(255,255,255,0.85)",
+          fontSize: "39px",
+          color: "rgba(30,20,8,0.85)",
           marginBottom: "48px",
         }}
       >
@@ -79,10 +79,10 @@ export default function Contact() {
               <p
                 style={{
                   ...mono,
-                  fontSize: "10px",
+                  fontSize: "13px",
                   textTransform: "uppercase",
                   letterSpacing: "0.14em",
-                  color: "rgba(255,255,255,0.28)",
+                  color: "rgba(30,20,8,0.28)",
                   marginBottom: "5px",
                 }}
               >
@@ -93,15 +93,15 @@ export default function Contact() {
                   href={href}
                   style={{
                     ...mono,
-                    fontSize: "13px",
-                    color: "#5ec4a0",
+                    fontSize: "14px",
+                    color: "#2d6a4f",
                     textDecoration: "none",
                   }}
                 >
                   {value}
                 </a>
               ) : (
-                <span style={{ ...mono, fontSize: "13px", color: "#5ec4a0" }}>
+                <span style={{ ...mono, fontSize: "14px", color: "#2d6a4f" }}>
                   {value}
                 </span>
               )}
@@ -112,8 +112,8 @@ export default function Contact() {
         {/* Right: form */}
         <div
           style={{
-            background: "rgba(22,22,26,0.6)",
-            border: "0.5px solid rgba(255,255,255,0.08)",
+            background: "rgba(255,255,255,0.6)",
+            border: "0.5px solid rgba(30,20,8,0.22)",
             borderRadius: "10px",
             padding: "26px",
             backdropFilter: "blur(4px)",
@@ -161,12 +161,12 @@ export default function Contact() {
               type="submit"
               style={{
                 ...mono,
-                fontSize: "13px",
+                fontSize: "14px",
                 fontWeight: "bold",
                 padding: "12px",
                 borderRadius: "3px",
-                background: "#5ec4a0",
-                color: "#0e0e10",
+                background: "#2d6a4f",
+                color: "#f5f0e8",
                 border: "none",
                 cursor: "pointer",
                 width: "100%",
@@ -176,7 +176,7 @@ export default function Contact() {
               Send Message
             </button>
             {status && (
-              <p style={{ ...mono, fontSize: "12px", color: "rgba(255,255,255,0.45)", textAlign: "center" }}>
+              <p style={{ ...mono, fontSize: "13px", color: "rgba(30,20,8,0.45)", textAlign: "center" }}>
                 {status}
               </p>
             )}

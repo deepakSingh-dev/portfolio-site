@@ -25,7 +25,7 @@ export default function Experience() {
       sectionId="experience"
       title="Experience"
       items={ITEMS}
-      accentColor="#5ec4a0"
+      accentColor="#2d6a4f"
     />
   );
 }

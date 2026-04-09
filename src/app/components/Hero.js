@@ -7,24 +7,49 @@ const SUBTITLES = [
   "Building intelligent systems",
 ];
 
+const SUMMARY =
+  "Software engineer and Masters candidate at Stevens Institute of Technology specializing in AI/ML systems, full-stack development, and data engineering. I've shipped production applications spanning LLM-powered tools, fraud detection models, and robotics automation platforms. Passionate about building intelligent systems that solve tangible problems.";
+
 const mono = { fontFamily: "'Courier New', Courier, monospace" };
 const serif = { fontFamily: "Georgia, serif" };
 
 export default function Hero() {
+  // Typewriter — subtitle (loops)
   const [displayed, setDisplayed] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
   const [paused, setPaused] = useState(false);
 
+  // Typewriter — summary (one-time)
+  const [sumIdx, setSumIdx] = useState(0);
+  const [sumStarted, setSumStarted] = useState(false);
+  const [sumDone, setSumDone] = useState(false);
+
+  // Start summary typing after mount
+  useEffect(() => {
+    const t = setTimeout(() => setSumStarted(true), 700);
+    return () => clearTimeout(t);
+  }, []);
+
+  // Summary typewriter tick
+  useEffect(() => {
+    if (!sumStarted || sumDone) return;
+    if (sumIdx < SUMMARY.length) {
+      const t = setTimeout(() => setSumIdx((i) => i + 1), 22);
+      return () => clearTimeout(t);
+    } else {
+      setSumDone(true);
+    }
+  }, [sumIdx, sumStarted, sumDone]);
+
+  // Subtitle typewriter tick
   useEffect(() => {
     const phrase = SUBTITLES[phraseIdx];
-
     if (paused) {
       const t = setTimeout(() => { setPaused(false); setDeleting(true); }, 1800);
       return () => clearTimeout(t);
     }
-
     if (!deleting) {
       if (charIdx < phrase.length) {
         const t = setTimeout(() => {
@@ -73,7 +98,7 @@ export default function Hero() {
           top: "15%",
           bottom: "15%",
           width: "2px",
-          background: "linear-gradient(to bottom, transparent, #5ec4a0 20%, #5ec4a0 80%, transparent)",
+          background: "linear-gradient(to bottom, transparent, #c9a227 20%, #c9a227 80%, transparent)",
         }}
       />
       {/* Vertical teal accent line — right */}
@@ -84,50 +109,49 @@ export default function Hero() {
           top: "15%",
           bottom: "15%",
           width: "2px",
-          background: "linear-gradient(to bottom, transparent, #5ec4a0 20%, #5ec4a0 80%, transparent)",
+          background: "linear-gradient(to bottom, transparent, #c9a227 20%, #c9a227 80%, transparent)",
         }}
       />
 
-      <div style={{ textAlign: "center", maxWidth: "640px" }}>
+      <div style={{ textAlign: "center", maxWidth: "900px", width: "100%" }}>
         {/* Name */}
         <h1
           style={{
             ...serif,
-            fontSize: "clamp(44px, 7vw, 58px)",
+            fontSize: "clamp(53px, 8vw, 73px)",
             fontStyle: "italic",
-            color: "#c8b88a",
+            color: "#3b1f0a",
             lineHeight: 1.1,
-            marginBottom: "28px",
+            marginBottom: "20px",
+            fontWeight: "bold",
+            whiteSpace: "nowrap",
           }}
         >
-          Deepak
-          <br />
-          Singh
+          Deepak Singh
         </h1>
 
-        {/* Tagline below name */}
+        {/* Static tagline */}
         <p
           style={{
             ...mono,
-            fontSize: "11px",
-            color: "rgba(255,255,255,0.38)",
+            fontSize: "14px",
+            color: "rgba(30,20,8,0.38)",
             letterSpacing: "0.06em",
             lineHeight: 1.7,
-            marginBottom: "28px",
-            maxWidth: "540px",
-            margin: "0 auto 28px",
+            maxWidth: "820px",
+            margin: "0 auto 24px",
           }}
         >
           MSIS · MSFE · BSCS &nbsp;|&nbsp; Stevens Institute of Technology &nbsp;|&nbsp; Ex - Software Engineer @ Robotspace &nbsp;|&nbsp; AI Systems · RPA · Python, React, Java, C++, Cloud Services, Distributed Systems
         </p>
 
-        {/* Typed subtitle */}
+        {/* Typed subtitle (loops) */}
         <div
           style={{
             ...mono,
-            fontSize: "15px",
-            color: "rgba(255,255,255,0.65)",
-            marginBottom: "44px",
+            fontSize: "14px",
+            color: "rgba(30,20,8,0.65)",
+            marginBottom: "28px",
             minHeight: "22px",
             display: "flex",
             alignItems: "center",
@@ -140,12 +164,41 @@ export default function Hero() {
               display: "inline-block",
               width: "2px",
               height: "16px",
-              background: "#5ec4a0",
+              background: "#2d6a4f",
               marginLeft: "1px",
               animation: "cursor-blink 1s step-end infinite",
             }}
           />
         </div>
+
+        {/* Summary — one-time typewriter */}
+        <p
+          style={{
+            ...mono,
+            fontSize: "13px",
+            color: "rgba(30,20,8,0.45)",
+            lineHeight: 1.85,
+            maxWidth: "820px",
+            margin: "0 auto 40px",
+            minHeight: "88px",
+            textAlign: "left",
+          }}
+        >
+          {SUMMARY.slice(0, sumIdx)}
+          {!sumDone && sumStarted && (
+            <span
+              style={{
+                display: "inline-block",
+                width: "1.5px",
+                height: "13px",
+                background: "rgba(45,106,79,0.7)",
+                marginLeft: "1px",
+                verticalAlign: "middle",
+                animation: "cursor-blink 1s step-end infinite",
+              }}
+            />
+          )}
+        </p>
 
         {/* CTAs */}
         <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center" }}>
@@ -153,12 +206,12 @@ export default function Hero() {
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             style={{
               ...mono,
-              fontSize: "13px",
+              fontSize: "14px",
               fontWeight: "bold",
               padding: "12px 28px",
               borderRadius: "3px",
-              background: "#c8b88a",
-              color: "#0e0e10",
+              background: "#3b1f0a",
+              color: "#f5f0e8",
               border: "none",
               cursor: "pointer",
             }}
@@ -171,12 +224,12 @@ export default function Hero() {
             rel="noopener noreferrer"
             style={{
               ...mono,
-              fontSize: "13px",
+              fontSize: "14px",
               padding: "12px 28px",
               borderRadius: "3px",
               background: "transparent",
-              color: "#c8b88a",
-              border: "0.5px solid rgba(200,184,138,0.6)",
+              color: "#3b1f0a",
+              border: "0.5px solid rgba(59,31,10,0.6)",
               cursor: "pointer",
               textDecoration: "none",
               display: "inline-block",

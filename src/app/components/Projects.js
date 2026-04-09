@@ -58,11 +58,11 @@ function ProjectCard({ tag, title, description, metric }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? "rgba(94,196,160,0.03)" : "rgba(22,22,26,0.6)",
+        background: hovered ? "rgba(45,106,79,0.03)" : "rgba(255,255,255,0.6)",
         borderRadius: "8px",
         border: hovered
-          ? "0.5px solid rgba(94,196,160,0.22)"
-          : "0.5px solid rgba(255,255,255,0.07)",
+          ? "0.5px solid rgba(45,106,79,0.22)"
+          : "0.5px solid rgba(30,20,8,0.22)",
         backdropFilter: "blur(4px)",
         padding: "28px",
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
@@ -72,10 +72,10 @@ function ProjectCard({ tag, title, description, metric }) {
       <p
         style={{
           ...mono,
-          fontSize: "10px",
+          fontSize: "13px",
           textTransform: "uppercase",
           letterSpacing: "0.1em",
-          color: "#5ec4a0",
+          color: "#2d6a4f",
           marginBottom: "12px",
         }}
       >
@@ -84,8 +84,8 @@ function ProjectCard({ tag, title, description, metric }) {
       <h3
         style={{
           ...serif,
-          fontSize: "17px",
-          color: "rgba(255,255,255,0.88)",
+          fontSize: "21px",
+          color: "rgba(30,20,8,0.88)",
           marginBottom: "12px",
           lineHeight: 1.4,
         }}
@@ -95,8 +95,8 @@ function ProjectCard({ tag, title, description, metric }) {
       <p
         style={{
           ...mono,
-          fontSize: "12px",
-          color: "rgba(255,255,255,0.45)",
+          fontSize: "13px",
+          color: "rgba(30,20,8,0.45)",
           lineHeight: 1.75,
           marginBottom: "20px",
         }}
@@ -106,8 +106,8 @@ function ProjectCard({ tag, title, description, metric }) {
       <p
         style={{
           ...mono,
-          fontSize: "11px",
-          color: "#c8b88a",
+          fontSize: "14px",
+          color: "#3b1f0a",
           letterSpacing: "0.04em",
         }}
       >
@@ -126,8 +126,8 @@ export default function Projects() {
       <h2
         style={{
           ...serif,
-          fontSize: "32px",
-          color: "rgba(255,255,255,0.85)",
+          fontSize: "39px",
+          color: "rgba(30,20,8,0.85)",
           marginBottom: "36px",
         }}
       >

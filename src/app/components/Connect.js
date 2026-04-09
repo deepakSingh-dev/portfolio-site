@@ -27,9 +27,9 @@ function Card({ label, sub, href, fullWidth }) {
         padding: "20px 24px",
         borderRadius: "10px",
         border: hovered
-          ? "0.5px solid rgba(94,196,160,0.4)"
-          : "0.5px solid rgba(255,255,255,0.07)",
-        background: hovered ? "rgba(94,196,160,0.04)" : "transparent",
+          ? "0.5px solid rgba(45,106,79,0.4)"
+          : "0.5px solid rgba(30,20,8,0.22)",
+        background: hovered ? "rgba(45,106,79,0.04)" : "transparent",
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         transition: "all 0.22s ease",
         textDecoration: "none",
@@ -38,18 +38,18 @@ function Card({ label, sub, href, fullWidth }) {
       }}
     >
       <div>
-        <div style={{ ...mono, fontSize: "13px", color: "rgba(255,255,255,0.8)", marginBottom: "4px" }}>
+        <div style={{ ...mono, fontSize: "14px", color: "rgba(30,20,8,0.8)", marginBottom: "4px" }}>
           {label}
         </div>
-        <div style={{ ...mono, fontSize: "11px", color: "rgba(255,255,255,0.35)" }}>
+        <div style={{ ...mono, fontSize: "14px", color: "rgba(30,20,8,0.35)" }}>
           {sub}
         </div>
       </div>
       <span
         style={{
           ...mono,
-          fontSize: "18px",
-          color: hovered ? "#5ec4a0" : "rgba(255,255,255,0.3)",
+          fontSize: "14px",
+          color: hovered ? "#2d6a4f" : "rgba(30,20,8,0.3)",
           transform: hovered ? "translateX(4px)" : "translateX(0)",
           transition: "all 0.22s ease",
         }}
@@ -69,8 +69,8 @@ export default function Connect() {
       <h2
         style={{
           ...serif,
-          fontSize: "32px",
-          color: "rgba(255,255,255,0.85)",
+          fontSize: "39px",
+          color: "rgba(30,20,8,0.85)",
           marginBottom: "32px",
         }}
       >

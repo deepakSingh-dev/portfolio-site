@@ -46,7 +46,7 @@ export default function ParticleCanvas() {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(p.x, p.y + p.h);
-        ctx.strokeStyle = `rgba(55,138,221,${p.opacity})`;
+        ctx.strokeStyle = `rgba(34,100,56,${p.opacity})`;
         ctx.lineWidth = p.w;
         ctx.stroke();
         p.y += p.speed;

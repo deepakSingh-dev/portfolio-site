@@ -53,8 +53,8 @@ export default function Navbar() {
           justifyContent: "space-between",
           padding: "8px 18px",
           borderRadius: "50px",
-          background: "rgba(14,14,16,0.82)",
-          border: "0.5px solid rgba(255,255,255,0.10)",
+          background: "rgba(245,240,232,0.92)",
+          border: "0.5px solid rgba(30,20,8,0.25)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
         }}
@@ -65,8 +65,8 @@ export default function Navbar() {
             onClick={() => scrollTo("hero")}
             style={{
               ...mono,
-              color: "#c8b88a",
-              fontSize: "13px",
+              color: "#3b1f0a",
+              fontSize: "14px",
               fontWeight: "bold",
               background: "none",
               border: "none",
@@ -77,7 +77,7 @@ export default function Navbar() {
           >
             Deepak Singh
           </button>
-          <div style={{ width: "0.5px", height: "16px", background: "rgba(255,255,255,0.15)" }} />
+          <div style={{ width: "0.5px", height: "16px", background: "rgba(30,20,8,0.15)" }} />
         </div>
 
         {/* Center: nav links (hidden on small screens) */}
@@ -98,16 +98,16 @@ export default function Navbar() {
                 onClick={() => scrollTo(id)}
                 style={{
                   ...mono,
-                  fontSize: "11px",
+                  fontSize: "14px",
                   textTransform: "uppercase",
                   letterSpacing: "0.05em",
                   padding: "5px 11px",
                   borderRadius: "50px",
                   border: active === id
-                    ? "0.5px solid rgba(94,196,160,0.22)"
+                    ? "0.5px solid rgba(45,106,79,0.22)"
                     : "0.5px solid transparent",
-                  background: active === id ? "rgba(94,196,160,0.13)" : "transparent",
-                  color: active === id ? "#5ec4a0" : "rgba(255,255,255,0.50)",
+                  background: active === id ? "rgba(45,106,79,0.13)" : "transparent",
+                  color: active === id ? "#2d6a4f" : "rgba(30,20,8,0.50)",
                   cursor: "pointer",
                   transition: "all 0.2s",
                   whiteSpace: "nowrap",
@@ -125,12 +125,12 @@ export default function Navbar() {
             onClick={() => scrollTo("contact")}
             style={{
               ...mono,
-              fontSize: "12px",
+              fontSize: "13px",
               fontWeight: "bold",
               padding: "7px 18px",
               borderRadius: "50px",
-              background: "#c8b88a",
-              color: "#0e0e10",
+              background: "#3b1f0a",
+              color: "#f5f0e8",
               border: "none",
               cursor: "pointer",
               whiteSpace: "nowrap",
@@ -144,9 +144,9 @@ export default function Navbar() {
             style={{
               background: "none",
               border: "none",
-              color: "rgba(255,255,255,0.7)",
+              color: "rgba(30,20,8,0.7)",
               cursor: "pointer",
-              fontSize: "18px",
+              fontSize: "14px",
               display: "none",
               padding: "4px",
             }}
@@ -167,8 +167,8 @@ export default function Navbar() {
             left: "28px",
             right: "28px",
             zIndex: 99,
-            background: "rgba(14,14,16,0.96)",
-            border: "0.5px solid rgba(255,255,255,0.10)",
+            background: "rgba(245,240,232,0.97)",
+            border: "0.5px solid rgba(30,20,8,0.25)",
             borderRadius: "10px",
             padding: "12px 0",
             backdropFilter: "blur(16px)",
@@ -183,13 +183,13 @@ export default function Navbar() {
                 display: "block",
                 width: "100%",
                 textAlign: "left",
-                fontSize: "13px",
+                fontSize: "14px",
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
                 padding: "10px 20px",
                 background: "none",
                 border: "none",
-                color: active === id ? "#5ec4a0" : "rgba(255,255,255,0.6)",
+                color: active === id ? "#2d6a4f" : "rgba(30,20,8,0.6)",
                 cursor: "pointer",
               }}
             >

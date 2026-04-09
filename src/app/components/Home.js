@@ -20,7 +20,7 @@ const Home = () => {
           New York, USA
         </h2>
         <p
-          className="text-[#b0eaff] py-4 max-w-[700px] text-base sm:text-lg mx-auto md:mx-0"
+          className="text-[#b0eaff] py-4 max-w-[700px] text-base sm:text-xl mx-auto md:mx-0"
           style={{ textShadow: "0 0 6px rgba(0, 255, 255, 0.6)" }}
         >
           Master's in Information Systems @ Stevens Institute of Technology

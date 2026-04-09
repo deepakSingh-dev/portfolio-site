@@ -22,8 +22,8 @@ function TimelineItem({ date, role, org, detail, badges, accentColor, isLast }) 
         style={{
           ...mono,
           textAlign: "right",
-          fontSize: "11px",
-          color: "rgba(255,255,255,0.30)",
+          fontSize: "14px",
+          color: "rgba(30,20,8,0.30)",
           lineHeight: 1.5,
           paddingTop: "1px",
         }}
@@ -51,7 +51,7 @@ function TimelineItem({ date, role, org, detail, badges, accentColor, isLast }) 
             style={{
               flex: 1,
               width: "0.5px",
-              background: "rgba(255,255,255,0.07)",
+              background: "rgba(30,20,8,0.22)",
               marginTop: "6px",
               minHeight: "40px",
             }}
@@ -70,9 +70,9 @@ function TimelineItem({ date, role, org, detail, badges, accentColor, isLast }) 
         <div
           style={{
             ...serif,
-            fontSize: "16px",
+            fontSize: "14px",
             fontWeight: "bold",
-            color: "rgba(255,255,255,0.88)",
+            color: "rgba(30,20,8,0.88)",
             marginBottom: "3px",
           }}
         >
@@ -81,7 +81,7 @@ function TimelineItem({ date, role, org, detail, badges, accentColor, isLast }) 
         <div
           style={{
             ...mono,
-            fontSize: "12px",
+            fontSize: "13px",
             color: accentColor,
             marginBottom: "12px",
           }}
@@ -91,8 +91,8 @@ function TimelineItem({ date, role, org, detail, badges, accentColor, isLast }) 
         <p
           style={{
             ...mono,
-            fontSize: "12px",
-            color: "rgba(255,255,255,0.45)",
+            fontSize: "13px",
+            color: "rgba(30,20,8,0.45)",
             lineHeight: 1.75,
             marginBottom: "14px",
           }}
@@ -105,7 +105,7 @@ function TimelineItem({ date, role, org, detail, badges, accentColor, isLast }) 
               key={badge}
               style={{
                 ...mono,
-                fontSize: "11px",
+                fontSize: "14px",
                 padding: "3px 10px",
                 borderRadius: "2px",
                 border: `0.5px solid ${accentColor}55`,
@@ -131,8 +131,8 @@ export default function Timeline({ items, accentColor, sectionId, title }) {
       <h2
         style={{
           ...serif,
-          fontSize: "32px",
-          color: "rgba(255,255,255,0.85)",
+          fontSize: "39px",
+          color: "rgba(30,20,8,0.85)",
           marginBottom: "48px",
         }}
       >

@@ -25,7 +25,7 @@ export default function Leadership() {
       sectionId="leadership"
       title="Leadership"
       items={ITEMS}
-      accentColor="#85b7eb"
+      accentColor="#2d6a4f"
     />
   );
 }
